@@ -226,6 +226,11 @@ TCP工作在传输层，HTTP工作在应用层
 - 3.ChannelPipline是一个双向链表
 - 4.ChannelHandlerContext 报文会在所有handler中被传递
 
+> Channel、ChannelPipeline 和 ChannelHandlerContext 上的事件传播
+> 
+> 如果调用Channel 或者ChannelPipeline 上 的这些方法，它们将沿着整个 ChannelPipeline 进行传播。
+而调用位于 ChannelHandlerContext 上的相同方法，则将从当前所关联的 ChannelHandler 开始，
+并且只会传播给位于该 ChannelPipeline 中的下一个(入站下一个，出站上一个)能够处理该事件的 ChannelHandler
 
 
 

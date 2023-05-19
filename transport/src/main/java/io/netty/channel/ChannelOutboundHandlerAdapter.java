@@ -22,6 +22,7 @@ import java.net.SocketAddress;
 /**
  * Skeleton implementation of a {@link ChannelOutboundHandler}. This implementation just forwards each method call via
  * the {@link ChannelHandlerContext}.
+ *
  */
 public class ChannelOutboundHandlerAdapter extends ChannelHandlerAdapter implements ChannelOutboundHandler {
 
@@ -94,6 +95,8 @@ public class ChannelOutboundHandlerAdapter extends ChannelHandlerAdapter impleme
      * to the next {@link ChannelOutboundHandler} in the {@link ChannelPipeline}.
      *
      * Sub-classes may override this method to change behavior.
+     *
+     * 当业务发出一个要求读的出栈事件之后，就会触发该方法
      */
     @Skip
     @Override
